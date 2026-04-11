@@ -1,0 +1,9 @@
+name = "onepage-crm-mcp"
+main = "src/index.ts"
+compatibility_date = "2024-11-01"
+compatibility_flags = ["nodejs_compat"]
+# account_id = "your-cloudflare-account-id"  # optional: set here or wrangler will prompt
+
+# Secrets (set via: wrangler secret put ONEPAGECRM_USER_ID)
+# ONEPAGECRM_USER_ID
+# ONEPAGECRM_API_KEY
