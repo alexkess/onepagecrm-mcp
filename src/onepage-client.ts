@@ -56,8 +56,8 @@ export class OnePageClient {
     return this.request("PUT", `/actions/${id}.json`, { done: true });
   }
 
-  async createAction(contactId: string, body: unknown): Promise<unknown> {
-    return this.request("POST", `/contacts/${contactId}/next_actions.json`, body);
+  async createAction(body: unknown): Promise<unknown> {
+    return this.request("POST", "/actions.json", body);
   }
 
   // ── Contacts ──

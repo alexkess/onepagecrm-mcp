@@ -173,11 +173,11 @@ function createServer(env: Env): McpServer {
     },
     async (params) => {
       try {
-        const body: Record<string, unknown> = { text: params.text };
+        const body: Record<string, unknown> = { contact_id: params.contact_id, text: params.text };
         if (params.date) body.date = params.date;
         if (params.assignee_id) body.assignee_id = params.assignee_id;
         if (params.status) body.status = params.status;
-        const result = await client.createAction(params.contact_id, body);
+        const result = await client.createAction(body);
         return { content: [{ type: "text", text: JSON.stringify(result, null, 2) }] };
       } catch (e: unknown) {
         return { content: [{ type: "text", text: `Error: ${(e as Error).message}` }], isError: true };
